@@ -4,6 +4,7 @@ import "./globals.css";
 
 import AntdThemeRegistry from "@/lib/antd/registry";
 import StyledComponentsRegistry from "@/lib/styled/registry";
+import StoreProviderRegistry from "@/lib/store/registry";
 import Header from "@/components/Header";
 
 export const metadata: Metadata = {
@@ -22,8 +23,10 @@ const RootLayout = ({
         <StyledComponentsRegistry>
           <AntdRegistry>
             <AntdThemeRegistry>
-              <Header />
-              {children}
+              <StoreProviderRegistry>
+                <Header />
+                {children}
+              </StoreProviderRegistry>
             </AntdThemeRegistry>
           </AntdRegistry>
         </StyledComponentsRegistry>
