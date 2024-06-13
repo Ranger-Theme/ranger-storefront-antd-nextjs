@@ -5,7 +5,7 @@ const Logo = () => {
 
   return (
     <div>
-      <p>{storeConfig?.name ?? ""}</p>
+      <p>{storeConfig?.code ?? ""}</p>
     </div>
   );
 };
