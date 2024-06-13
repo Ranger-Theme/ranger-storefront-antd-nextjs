@@ -1,5 +1,4 @@
 "use client";
-
 import { HttpLink } from "@apollo/client";
 import {
   ApolloNextAppProvider,
@@ -9,16 +8,16 @@ import {
 
 const makeClient = () => {
   const httpLink = new HttpLink({
-    uri: "http://82.157.172.168/graphql",
+    uri: `${process.env.NEXT_PUBLIC_HOST_URL}api/graphql`,
     credentials: "same-origin",
     useGETForQueries: true,
     fetchOptions: { cache: "no-store" },
   });
 
-  // use the `ApolloClient` from "@apollo/experimental-nextjs-app-support"
   return new ApolloClient({
-    // use the `InMemoryCache` from "@apollo/experimental-nextjs-app-support"
-    cache: new InMemoryCache(),
+    cache: new InMemoryCache({
+      addTypename: false,
+    }),
     link: httpLink,
   });
 };

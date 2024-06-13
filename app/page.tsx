@@ -1,4 +1,5 @@
-import { Button } from "antd";
+import CmsBlock from "@/components/CmsBlock";
+import HomePage from "@/page/HomePage";
 
 const Home = () => {
   return (
@@ -9,9 +10,8 @@ const Home = () => {
           <code className="font-mono font-bold">app/page.tsx</code>
         </p>
       </div>
-      <Button type="primary">
-        <span>Add To Cart</span>
-      </Button>
+      <CmsBlock />
+      <HomePage />
     </main>
   );
 };

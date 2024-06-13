@@ -11,10 +11,9 @@ export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
       addTypename: false,
     }),
     link: new HttpLink({
-      uri: "http://82.157.172.168/graphql",
+      uri: `${process.env.NEXT_PUBLIC_HOST_URL}api/graphql`,
       credentials: "same-origin",
       useGETForQueries: true,
-      fetchOptions: { cache: "no-store" },
     }),
   });
 });

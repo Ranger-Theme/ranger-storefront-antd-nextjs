@@ -17,7 +17,7 @@ export const slice: Slice = createSlice({
   name: "app",
   initialState,
   reducers: {
-    setAppConfig: (state: AppState, { payload }) => {
+    setAppConfig: (state: AppState, { payload = {} }) => {
       const { currency, storeConfig } = payload;
       state.currency = currency;
       state.storeConfig = storeConfig;
