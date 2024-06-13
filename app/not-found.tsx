@@ -3,7 +3,7 @@ const NoutFound = () => {
     <div>
       <p>Not Found Page</p>
     </div>
-  );
-};
+  )
+}
 
-export default NoutFound;
+export default NoutFound

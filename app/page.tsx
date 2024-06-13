@@ -1,5 +1,5 @@
-import CmsBlock from "@/components/CmsBlock";
-import HomePage from "@/page/HomePage";
+import CmsBlock from '@/components/CmsBlock'
+import HomePage from '@/page/HomePage'
 
 const Home = () => {
   return (
@@ -13,7 +13,7 @@ const Home = () => {
       <CmsBlock />
       <HomePage />
     </main>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

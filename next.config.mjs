@@ -1,4 +1,4 @@
-const isProd = process.env.NODE_ENV === "production";
+const isProd = process.env.NODE_ENV === 'production'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -8,9 +8,9 @@ const nextConfig = {
       displayName: isProd,
       ssr: true,
       minify: isProd,
-      ...(isProd ? { namespace: "ranger" } : {}),
-    },
-  },
-};
+      ...(isProd ? { namespace: 'ranger' } : {})
+    }
+  }
+}
 
-export default nextConfig;
+export default nextConfig

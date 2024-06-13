@@ -1,12 +1,16 @@
 {
-  "name": "ranger-storefront-mui-nextjs",
+  "name": "ranger-storefront-antd-nextjs",
+  "author": "Ranger Theme Corp",
+  "license": "",
+  "copyright": "@ Ranger Theme Corp. All Rights Reserved",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev -H 127.0.0.1 -p 3000",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "husky:prepare": "husky install"
   },
   "dependencies": {
     "@ant-design/nextjs-registry": "^1.0.0",
@@ -21,12 +25,19 @@
     "styled-components": "^6.1.11"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
     "@types/node": "^20.14.2",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "^14.2.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
     "postcss": "^8.4.38",
+    "prettier": "^3.3.2",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.4.5"
   }
