@@ -1,8 +1,8 @@
-"use client";
-import { Button } from "antd";
+'use client'
+import { Button } from 'antd'
 
-import Logo from "@/components/Logo";
-import { StyledHeader } from "./styled";
+import Logo from '@/components/Logo'
+import { StyledHeader } from './styled'
 
 const Header = () => {
   return (
@@ -10,7 +10,7 @@ const Header = () => {
       <Logo />
       <Button>Mini Cart</Button>
     </StyledHeader>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

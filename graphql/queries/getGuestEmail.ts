@@ -1,5 +1,5 @@
-import { gql } from "@apollo/client";
-import type { DocumentNode } from "@apollo/client";
+import { gql } from '@apollo/client'
+import type { DocumentNode } from '@apollo/client'
 
 export const GET_GUEST_EMAIL: DocumentNode = gql`
   query getGuestEmail($email: String!) {
@@ -7,4 +7,4 @@ export const GET_GUEST_EMAIL: DocumentNode = gql`
       is_email_available
     }
   }
-`;
+`

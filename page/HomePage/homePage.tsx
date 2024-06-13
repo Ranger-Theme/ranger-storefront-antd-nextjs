@@ -1,21 +1,21 @@
-"use client";
-import { useLazyQuery } from "@apollo/client";
-import { Button, Form, Input } from "antd";
+'use client'
+import { useLazyQuery } from '@apollo/client'
+import { Button, Form, Input } from 'antd'
 
-import { GET_GUEST_EMAIL } from "@/graphql/queries/getGuestEmail";
+import { GET_GUEST_EMAIL } from '@/graphql/queries/getGuestEmail'
 
 const HomePage = () => {
-  const [fetchEmail] = useLazyQuery(GET_GUEST_EMAIL);
+  const [fetchEmail] = useLazyQuery(GET_GUEST_EMAIL)
 
   const handleOnFinish = async (values: any) => {
     const { data } = await fetchEmail({
       variables: {
-        email: values.email,
+        email: values.email
       },
-      fetchPolicy: "no-cache",
-    });
-    console.info(data);
-  };
+      fetchPolicy: 'no-cache'
+    })
+    console.info(data)
+  }
 
   return (
     <div>
@@ -28,7 +28,7 @@ const HomePage = () => {
         </Button>
       </Form>
     </div>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage

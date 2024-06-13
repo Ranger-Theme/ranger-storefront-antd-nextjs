@@ -1,5 +1,5 @@
 interface PropsType {
-  [key: string]: any;
+  [key: string]: any
 }
 
 const props: PropsType = {
@@ -490,9 +490,9 @@ const props: PropsType = {
   // the context of Emotion.
   for: true,
   class: true,
-  autofocus: true,
-};
+  autofocus: true
+}
 
-const value: string = Object.keys(props).join("|");
+const value: string = Object.keys(props).join('|')
 
-export const reactProps: string = `/^((${value})|(([Dd][Aa][Tt][Aa]|[Aa][Rr][Ii][Aa]|x)-.*))$/`;
+export const reactProps: string = `/^((${value})|(([Dd][Aa][Tt][Aa]|[Aa][Rr][Ii][Aa]|x)-.*))$/`

@@ -1,5 +1,5 @@
-import { slice } from "./slice";
+import { slice } from './slice'
 
-const { actions, reducer } = slice;
+const { actions, reducer } = slice
 
-export { actions, reducer };
+export { actions, reducer }

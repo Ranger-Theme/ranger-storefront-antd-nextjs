@@ -1,33 +1,29 @@
-"use client";
-import { HttpLink } from "@apollo/client";
+'use client'
+import { HttpLink } from '@apollo/client'
 import {
   ApolloNextAppProvider,
   ApolloClient,
-  InMemoryCache,
-} from "@apollo/experimental-nextjs-app-support";
+  InMemoryCache
+} from '@apollo/experimental-nextjs-app-support'
 
 const makeClient = () => {
   const httpLink = new HttpLink({
     uri: `${process.env.NEXT_PUBLIC_HOST_URL}api/graphql`,
-    credentials: "same-origin",
+    credentials: 'same-origin',
     useGETForQueries: true,
-    fetchOptions: { cache: "no-store" },
-  });
+    fetchOptions: { cache: 'no-store' }
+  })
 
   return new ApolloClient({
     cache: new InMemoryCache({
-      addTypename: false,
+      addTypename: false
     }),
-    link: httpLink,
-  });
-};
+    link: httpLink
+  })
+}
 
 const ApolloRegistry = ({ children }: React.PropsWithChildren) => {
-  return (
-    <ApolloNextAppProvider makeClient={makeClient}>
-      {children}
-    </ApolloNextAppProvider>
-  );
-};
+  return <ApolloNextAppProvider makeClient={makeClient}>{children}</ApolloNextAppProvider>
+}
 
-export default ApolloRegistry;
+export default ApolloRegistry

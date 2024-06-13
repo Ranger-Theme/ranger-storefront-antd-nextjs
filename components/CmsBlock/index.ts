@@ -1,1 +1,1 @@
-export { default } from "./cmsBlock";
+export { default } from './cmsBlock'

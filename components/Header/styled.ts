@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const StyledHeader = styled.header`
   position: relative;
@@ -9,4 +9,4 @@ export const StyledHeader = styled.header`
       text-transform: uppercase;
     }
   }
-`;
+`
