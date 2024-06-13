@@ -7,12 +7,13 @@ import {
 
 export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
   return new ApolloClient({
-    cache: new InMemoryCache(),
+    cache: new InMemoryCache({
+      addTypename: false,
+    }),
     link: new HttpLink({
-      // this needs to be an absolute url, as relative urls cannot be used in SSR
       uri: "http://82.157.172.168/graphql",
-      // you can disable result caching here if you want to
-      // (this does not work if you are rendering your page with `export const dynamic = "force-static"`)
+      credentials: "same-origin",
+      useGETForQueries: true,
       fetchOptions: { cache: "no-store" },
     }),
   });

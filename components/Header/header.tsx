@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <StyledHeader>
       <Logo />
-      <Button>Header Block</Button>
+      <Button>Mini Cart</Button>
     </StyledHeader>
   );
 };
