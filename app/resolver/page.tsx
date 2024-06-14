@@ -1,5 +1,7 @@
 import dynamic from 'next/dynamic'
-import type { Metadata, ResolvingMetadata } from 'next/types'
+import { notFound } from 'next/navigation'
+import { isEmpty } from 'lodash-es'
+import type { Metadata } from 'next/types'
 
 import type { PageType } from '@/interface/page'
 import { GET_ROUTE } from '@/graphql/queries/getRoute'
@@ -7,6 +9,7 @@ import { getClient } from '@/lib/apollo/client'
 
 const CategoryPage = dynamic(() => import('@/page/CategoryPage'))
 const ProductPage = dynamic(() => import('@/page/ProductPage'))
+const CmsPage = dynamic(() => import('@/page/CmsPage'))
 
 let resolve: any = null
 
@@ -39,7 +42,7 @@ const Resolver = async ({ searchParams }: PageType) => {
       : (searchParams.pathname as string[])
   const urlKey: string = pathname.join('/')
   const data = await fetchData(urlKey)
-  console.info('Resolver: ', data)
+  console.info('data: ', data)
 
   const meta: Metadata = {
     title: data?.meta_title ?? data.name,
@@ -53,10 +56,13 @@ const Resolver = async ({ searchParams }: PageType) => {
     resolve = meta
   }
 
+  if (isEmpty(data)) notFound()
+
   return (
     <div>
       {data?.type === 'CATEGORY' && <CategoryPage />}
       {data?.type === 'PRODUCT' && <ProductPage />}
+      {data?.type === 'CMS_PAGE' && <CmsPage />}
     </div>
   )
 }
