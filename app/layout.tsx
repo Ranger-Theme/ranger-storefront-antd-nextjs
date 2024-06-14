@@ -42,7 +42,7 @@ const RootLayout = async ({
               <AntdRegistry>
                 <AntdThemeRegistry>
                   <Header />
-                  {children}
+                  <main>{children}</main>
                   <Footer />
                 </AntdThemeRegistry>
               </AntdRegistry>

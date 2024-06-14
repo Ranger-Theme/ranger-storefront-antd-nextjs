@@ -8,12 +8,15 @@ export const ThemeConf: DefaultTheme = {
     black: '#32323C'
   },
   breakPoint: {
-    xxs: 320,
+    '3xs': 320,
+    '2xs': 375,
     xs: 480,
-    s: 640,
-    m: 768,
-    l: 1024,
-    xl: 1440,
-    xxl: 1920
+    sm: 640,
+    md: 768,
+    lg: 1024,
+    xl: 1280,
+    '2xl': 1440,
+    '3xl': 1536,
+    '4xl': 1920
   }
 }

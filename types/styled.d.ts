@@ -9,13 +9,16 @@ declare module 'styled-components' {
       black: string
     }
     breakPoint: {
-      xxs: number
+      '3xs': number
+      '2xs': number
       xs: number
-      s: number
-      m: number
-      l: number
+      sm: number
+      md: number
+      lg: number
       xl: number
-      xxl: number
+      '2xl': number
+      '3xl': number
+      '4xl': number
     }
   }
 }

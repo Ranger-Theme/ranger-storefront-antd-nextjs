@@ -14,7 +14,7 @@ const Header = () => {
   }
 
   return (
-    <StyledHeader>
+    <StyledHeader className="w-full max-w-screen-2xl mx-auto">
       <Logo />
       <div>
         <Link href="/login">Login</Link>

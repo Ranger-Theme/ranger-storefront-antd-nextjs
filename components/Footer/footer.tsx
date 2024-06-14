@@ -8,7 +8,7 @@ const Footer = () => {
   const storeConfig = useSelector((state: any) => state.app.storeConfig)
 
   return (
-    <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:text-center">
+    <div className="w-full max-w-screen-2xl mx-auto">
       <Newsletter />
       <StyledFooter>
         <p dangerouslySetInnerHTML={{ __html: storeConfig?.copyright }} />
