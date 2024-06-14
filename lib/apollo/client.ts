@@ -11,7 +11,7 @@ export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
       addTypename: false
     }),
     link: new HttpLink({
-      uri: `${process.env.NEXT_PUBLIC_HOST_URL}api/graphql`,
+      uri: `${process.env.NEXT_PUBLIC_HOST_URL}/api/graphql`,
       credentials: 'same-origin',
       useGETForQueries: true
     })

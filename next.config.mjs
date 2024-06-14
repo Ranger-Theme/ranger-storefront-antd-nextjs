@@ -10,6 +10,14 @@ const nextConfig = {
       minify: isProd,
       ...(isProd ? { namespace: 'ranger' } : {})
     }
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/:pathname*',
+        destination: '/resolver'
+      }
+    ]
   }
 }
 

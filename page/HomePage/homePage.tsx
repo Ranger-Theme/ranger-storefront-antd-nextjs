@@ -1,11 +1,11 @@
 'use client'
 import { useLazyQuery } from '@apollo/client'
-import { Button, Form, Input } from 'antd'
+import { Button, Form, Input, Spin } from 'antd'
 
 import { GET_GUEST_EMAIL } from '@/graphql/queries/getGuestEmail'
 
 const HomePage = () => {
-  const [fetchEmail] = useLazyQuery(GET_GUEST_EMAIL)
+  const [fetchEmail, { loading }] = useLazyQuery(GET_GUEST_EMAIL)
 
   const handleOnFinish = async (values: any) => {
     const { data } = await fetchEmail({
@@ -14,20 +14,19 @@ const HomePage = () => {
       },
       fetchPolicy: 'no-cache'
     })
-    console.info(data)
   }
 
   return (
-    <div>
+    <Spin spinning={loading}>
       <Form onFinish={handleOnFinish}>
         <Form.Item name="email" rules={[{ required: true }]}>
           <Input />
         </Form.Item>
         <Button type="primary" htmlType="submit">
-          <span>Add To Cart</span>
+          <span>Validate Email</span>
         </Button>
       </Form>
-    </div>
+    </Spin>
   )
 }
 

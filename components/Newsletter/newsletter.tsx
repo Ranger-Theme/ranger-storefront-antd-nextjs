@@ -27,7 +27,7 @@ const Newsletter = () => {
             <Input />
           </Form.Item>
           <Button type="primary" htmlType="submit">
-            <span>Add To Cart</span>
+            <span>Subscribe</span>
           </Button>
         </Form>
       </Spin>

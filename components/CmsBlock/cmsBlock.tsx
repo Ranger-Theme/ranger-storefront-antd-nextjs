@@ -9,7 +9,6 @@ const CmsBlock = () => {
       identifiers: ['footer_links_block']
     }
   })
-  console.info(data)
 
   return (
     <div>
