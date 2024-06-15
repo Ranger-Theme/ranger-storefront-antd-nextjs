@@ -43,9 +43,11 @@ const RootLayout = async ({
             <StyledComponentsRegistry>
               <AntdRegistry>
                 <AntdThemeRegistry>
-                  <Header />
-                  <main>{children}</main>
-                  <Footer />
+                  <div className="bg-white relative text-colorDefault">
+                    <Header />
+                    <main className="main-page-dhh max-w-screen-2xl mx-auto">{children}</main>
+                    <Footer />
+                  </div>
                 </AntdThemeRegistry>
               </AntdRegistry>
             </StyledComponentsRegistry>
