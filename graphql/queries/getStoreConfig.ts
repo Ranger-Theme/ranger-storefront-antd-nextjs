@@ -15,6 +15,8 @@ export const GET_STORE_CONFIG: DocumentNode = gql`
       logo_src: header_logo_src
       secure_base_url
       secure_base_media_url
+      category_url_suffix
+      product_url_suffix
     }
     currency {
       code: default_display_currency_code

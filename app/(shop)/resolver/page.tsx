@@ -42,7 +42,6 @@ const Resolver = async ({ searchParams }: PageType) => {
       : (searchParams.pathname as string[])
   const urlKey: string = pathname.join('/')
   const data = await fetchData(urlKey)
-  console.info('data: ', data)
 
   const meta: Metadata = {
     title: data?.meta_title ?? data.name,
