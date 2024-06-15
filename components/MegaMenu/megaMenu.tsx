@@ -5,6 +5,7 @@ import { sortBy } from 'lodash-es'
 
 import { GET_MEGA_MENU } from '@/graphql/queries/getMegaMenu'
 import type { Menu } from '@/interface/menu'
+import { StyledMenuItem } from './styled'
 
 const MegaMenu = () => {
   const { data } = useSuspenseQuery<any>(GET_MEGA_MENU)
@@ -15,12 +16,13 @@ const MegaMenu = () => {
       {menuList.length > 0 && (
         <nav className="lg:flex col-end-10 col-start-3 flex-grow justify-self-center">
           {menuList.map((menu) => {
+            const { url_path, name } = menu
             return (
-              <div key={menu.url_path} className="px-3 py-0">
-                <Link href={menu.url_path}>
-                  <span dangerouslySetInnerHTML={{ __html: menu.name }} />
+              <StyledMenuItem key={url_path} className="px-3 py-0">
+                <Link className="items-center inline-flex" href={url_path} title={name}>
+                  <span dangerouslySetInnerHTML={{ __html: name }} />
                 </Link>
-              </div>
+              </StyledMenuItem>
             )
           })}
         </nav>

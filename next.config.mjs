@@ -9,7 +9,7 @@ const nextConfig = {
   assetPrefix: isProd && cdnURL ? cdnURL : undefined,
   compiler: {
     styledComponents: {
-      displayName: isProd,
+      displayName: !isProd,
       ssr: true,
       minify: isProd,
       ...(isProd ? { namespace: 'ranger' } : {})
