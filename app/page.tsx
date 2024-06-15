@@ -1,4 +1,3 @@
-import CmsBlock from '@/components/CmsBlock'
 import HomePage from '@/page/HomePage'
 
 const Home = () => {
@@ -10,7 +9,6 @@ const Home = () => {
           <code className="font-mono font-bold">app/page.tsx</code>
         </p>
       </div>
-      <CmsBlock />
       <HomePage />
     </main>
   )
