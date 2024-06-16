@@ -4,10 +4,12 @@ import './globals.css'
 
 import { GET_STORE_CONFIG } from '@/graphql/queries/getStoreConfig'
 import { getClient } from '@/lib/apollo/client'
+import { getIntl } from '@/lib/i18n/intl'
 import AntdThemeRegistry from '@/lib/antd/registry'
 import StyledComponentsRegistry from '@/lib/styled/registry'
 import ApolloRegistry from '@/lib/apollo/registry'
 import StoreProviderRegistry from '@/lib/store/registry'
+import ServerIntlProvider from '@/lib/i18n/registry'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
@@ -34,23 +36,26 @@ const RootLayout = async ({
   children: React.ReactNode
 }>) => {
   const data = await fetchData()
+  const intl = await getIntl('en')
 
   return (
-    <html lang="en">
+    <html>
       <body>
         <ApolloRegistry>
           <StoreProviderRegistry initState={data}>
-            <StyledComponentsRegistry>
-              <AntdRegistry>
-                <AntdThemeRegistry>
-                  <div className="bg-white relative text-colorDefault">
-                    <Header />
-                    <main className="main-page-dhh max-w-screen-2xl mx-auto">{children}</main>
-                    <Footer />
-                  </div>
-                </AntdThemeRegistry>
-              </AntdRegistry>
-            </StyledComponentsRegistry>
+            <ServerIntlProvider messages={intl.messages} locale={intl.locale}>
+              <StyledComponentsRegistry>
+                <AntdRegistry>
+                  <AntdThemeRegistry>
+                    <div className="bg-white relative text-colorDefault">
+                      <Header />
+                      <main className="main-page-dhh max-w-screen-2xl mx-auto">{children}</main>
+                      <Footer />
+                    </div>
+                  </AntdThemeRegistry>
+                </AntdRegistry>
+              </StyledComponentsRegistry>
+            </ServerIntlProvider>
           </StoreProviderRegistry>
         </ApolloRegistry>
       </body>
