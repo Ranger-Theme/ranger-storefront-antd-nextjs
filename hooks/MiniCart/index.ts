@@ -1,0 +1,1 @@
+export { useMiniCart } from './useMiniCart'
