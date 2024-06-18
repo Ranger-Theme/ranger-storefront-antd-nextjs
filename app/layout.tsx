@@ -5,6 +5,7 @@ import './globals.css'
 import { GET_STORE_CONFIG } from '@/graphql/queries/getStoreConfig'
 import { getClient } from '@/lib/apollo/client'
 import { getIntl } from '@/lib/i18n/intl'
+import { ProgressBar, ProgressBarProvider } from '@/lib/progress/registry'
 import AntdThemeRegistry from '@/lib/antd/registry'
 import StyledComponentsRegistry from '@/lib/styled/registry'
 import ApolloRegistry from '@/lib/apollo/registry'
@@ -47,11 +48,12 @@ const RootLayout = async ({
               <StyledComponentsRegistry>
                 <AntdRegistry>
                   <AntdThemeRegistry>
-                    <div className="bg-white relative text-colorDefault">
+                    <ProgressBarProvider>
+                      <ProgressBar className="fixed h-1 shadow-lg shadow-sky-500/20 bg-sky-500 top-0" />
                       <Header />
                       <main className="main-page-dhh max-w-screen-2xl mx-auto">{children}</main>
                       <Footer />
-                    </div>
+                    </ProgressBarProvider>
                   </AntdThemeRegistry>
                 </AntdRegistry>
               </StyledComponentsRegistry>
