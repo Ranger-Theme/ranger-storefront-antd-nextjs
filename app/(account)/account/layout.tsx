@@ -1,9 +1,8 @@
 'use client'
-// import Link from 'next/link'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { clsx } from 'clsx'
 
-import Link from '@/lib/progress/link'
 import type { LinkType } from '@/interface/link'
 
 const AccountLayout = ({
