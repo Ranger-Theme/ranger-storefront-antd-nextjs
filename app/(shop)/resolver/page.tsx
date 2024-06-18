@@ -58,11 +58,11 @@ const Resolver = async ({ searchParams }: PageType) => {
   if (isEmpty(data)) notFound()
 
   return (
-    <div>
-      {data?.type === 'CATEGORY' && <CategoryPage />}
+    <>
+      {data?.type === 'CATEGORY' && <CategoryPage data={data} />}
       {data?.type === 'PRODUCT' && <ProductPage />}
       {data?.type === 'CMS_PAGE' && <CmsPage />}
-    </div>
+    </>
   )
 }
 
