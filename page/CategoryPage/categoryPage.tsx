@@ -1,7 +1,7 @@
 import CategoryGrid from '@/components/CategoryGrid'
 
 const CategoryPage = ({ data }: any) => {
-  const showProducts: boolean = ['PRODUCTS', 'PRODUCTS_AND_PAGE'].includes(data.display_mode)
+  const showProducts: boolean = data.display_mode !== 'PAGES'
 
   return (
     <article className="category p-4">
@@ -11,7 +11,7 @@ const CategoryPage = ({ data }: any) => {
           dangerouslySetInnerHTML={{ __html: data.name }}
         />
       </h1>
-      {showProducts && <CategoryGrid />}
+      {showProducts && <CategoryGrid id={data.id} />}
     </article>
   )
 }

@@ -1,9 +1,9 @@
 import Link from 'next/link'
 
-const ProductPage = () => {
+const ProductPage = ({ data }: any) => {
   return (
     <div>
-      <p>Product Page</p>
+      <p>{data.name}</p>
       <Link href="/women/bottoms-women/pants-women.html">
         <span>Pants - Bottoms - Women</span>
       </Link>

@@ -21,6 +21,18 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: isProd
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: '**'
+      },
+      {
+        protocol: 'https',
+        hostname: '**'
+      }
+    ]
+  },
   async rewrites() {
     return [
       {

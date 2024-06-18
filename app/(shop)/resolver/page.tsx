@@ -44,9 +44,9 @@ const Resolver = async ({ searchParams }: PageType) => {
   const data = await fetchData(urlKey)
 
   const meta: Metadata = {
-    title: data?.meta_title ?? data.name,
-    keywords: data?.meta_keywords ?? data.name,
-    description: data?.meta_description ?? data.name
+    title: data?.meta_title ?? data?.name ?? '',
+    keywords: data?.meta_keywords ?? data?.name ?? '',
+    description: data?.meta_description ?? data?.name ?? ''
   }
 
   if (resolve && typeof resolve === 'function') {
@@ -60,7 +60,7 @@ const Resolver = async ({ searchParams }: PageType) => {
   return (
     <>
       {data?.type === 'CATEGORY' && <CategoryPage data={data} />}
-      {data?.type === 'PRODUCT' && <ProductPage />}
+      {data?.type === 'PRODUCT' && <ProductPage data={data} />}
       {data?.type === 'CMS_PAGE' && <CmsPage />}
     </>
   )

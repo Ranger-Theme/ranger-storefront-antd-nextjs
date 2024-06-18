@@ -24,7 +24,7 @@ const MegaMenu = () => {
               <StyledMenuItem key={url_path} className="px-3 py-0">
                 <Link
                   className="items-center inline-flex"
-                  href={`${url_path}${suffix}`}
+                  href={`/${url_path}${suffix}`}
                   title={name}
                 >
                   <span dangerouslySetInnerHTML={{ __html: name }} />

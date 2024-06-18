@@ -10,8 +10,7 @@ const makeClient = () => {
   const httpLink = new HttpLink({
     uri: `${process.env.NEXT_PUBLIC_HOST_URL}/api/graphql`,
     credentials: 'same-origin',
-    useGETForQueries: true,
-    fetchOptions: { cache: 'no-store' }
+    useGETForQueries: true
   })
 
   return new ApolloClient({
