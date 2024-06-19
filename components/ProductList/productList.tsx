@@ -22,6 +22,14 @@ const ProductList = ({ inputs, id }: any) => {
 
   return (
     <div className="lg:flex-grow">
+      <div className="flex flex-wrap justify-center pb-2 lg:flex-nowrap lg:items-center lg:justify-between lg:pb-6 lg:w-full">
+        <div className="basis-full leading-tight max-w-[75vw] mx-0 my-xs text-center lg:m-0 lg:text-left">
+          <span>{`${total} ${total > 1 ? 'Results' : 'Result'}`}</span>
+        </div>
+        <div className="flex justify-center pb-sm basis-full lg:justify-end lg:pb-0">
+          <span>Sort by</span>
+        </div>
+      </div>
       <section>
         {productList.length > 0 ? (
           <div className="grid grid-cols-1 leading-none" aria-busy="false">
